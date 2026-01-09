@@ -7,8 +7,20 @@ This specific GTF file contains all known human genes according to the GENCODE c
 The GTF format is as follows: 
 
 ```
-CHROM	SOURCE	FEAT	START	END	SCORE	STRAND	FRAME	INFO
+Column 1: chromosome
+Column 2: source
+Column 3: feature
+Column 4: start
+Column 5: end
+Column 6: score
+Column 7: strand
+Column 8: frame
+Column 9: info
+```
 
+For example:
+
+```
 chr1	HAVANA	gene	11869	14409	.	+	.	gene_id "ENSG00000290825.1"; gene_type "lncRNA"; gene_name "DDX11L2"; level 2; tag "overlaps_pseudogene";
 chr1	HAVANA	gene	12010	13670	.	+	.	gene_id "ENSG00000223972.6"; gene_type "transcribed_unprocessed_pseudogene"; gene_name "DDX11L1"; level 2; hgnc_id "HGNC:37102"; havana_gene "OTTHUMG00000000961.2";
 chr1	HAVANA	gene	14404	29570	.	-	.	gene_id "ENSG00000227232.5"; gene_type "unprocessed_pseudogene"; gene_name "WASH7P"; level 2; hgnc_id "HGNC:38034"; havana_gene "OTTHUMG00000000958.1";
@@ -23,6 +35,8 @@ For example, the first row corresponds to gene DDX11L2, located on chromosome 1,
 
 Please note that all the columns are tab-separated, however, the INFO field consists of semicolon-separated key-value pairs; values are space-separated within each key-value pair.
 
+The info field contains a lot of information about the genes such as gene type, the gene name and id, and other less commonly-used id's for this gene. 
+
 ** IMPORTANT **
 
 This file is large, so you should not perform calculations on the login node. Use a computing or interactive node (qrsh). 
@@ -30,6 +44,8 @@ This file is large, so you should not perform calculations on the login node. Us
 ## Instructions 
 
 First, download or trasnfer the GTF file to Hoffman2.
+
+Hint: You can download individual files from Github, but you can also download the entire repository if that's easier. 
 
 You will write a shell script with the format "W1_assignment_FIRSTNAME_LASTNAME.sh" and write code for each task. for example: 
 
@@ -44,15 +60,22 @@ echo "T1: There are $ng genes"
 1. Which chromosome contains the most genes? 
 2. Which chromosome contains the least? 
 3. In total, are there more genes on the positive (+) or negative (-) strand? 
-4. Given that the human genome contains 3.1 billion (3.1 * 10^9) bases. What percentage of the genome is covered by genes? (assume no overlapping coordinates)
-5. In total, are there more "protein_coding" genes or "lncRNA" genes? 
-6. Which gene is the longest?  
-7. Split the current GTF into two files based on the 'SOURCE' column. Create one GTF that only contains `HAVANA` source and one GTF that contains `ENSEMBL` source. Use an if-statement to check which of these files has more genes. Print a message such as "HAVANA contains more genes" or "ENSEMBL contains more genes". 
-8. Add arguments to make your shell script a submission script runable with qsub. Use -o joblog.$USER
+4. In total, are there more "protein_coding" genes or "lncRNA" genes? 
+5. Which gene is the longest?  
+6. Split the current GTF into two files based on the 'SOURCE' column. Create one GTF that only contains `HAVANA` source and one GTF that contains `ENSEMBL` source. Use an if-statement to check which of these files has more genes. Print a message such as "HAVANA contains more genes" or "ENSEMBL contains more genes". 
+7. Add arguments to make your shell script a [submission script](https://www.hoffman2.idre.ucla.edu/Using-H2/Computing/Computing.html#how-to-build-a-submission-script) runable with qsub. Use -o W1_assignment_answers.FIRSTNAME_LASTNAME.txt 
 
 ## Submission
 
 You only need to submit your shell file  "W1_assignment_FIRSTNAME_LASTNAME.sh" to **/u/scratch/g/giovas**. Same way you submitted the Quiz. 
-I will submit each of your scripts to the cluster and check yout answers in your log file: joblog.$USER 
 
+I will submit each of your scripts to the cluster and check your answers in your log file: W1_assignment_answers.FIRSTNAME_LASTNAME.txt
+
+```
+qsub W1_assignment_FIRSTNAME_LASTNAME.sh
+```
+
+## Questions?
+
+Feel free to reach out: giovas@ucla.edu
 
