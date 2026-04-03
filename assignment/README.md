@@ -1,3 +1,20 @@
+# Instructions 
+
+First, download or transfer the GTF file to Hoffman2.
+
+Hint: You can download individual files from Github, but you can also download the entire repository if that's easier. 
+
+You will write a shell script with the name format "W1_assignment_FIRSTNAME_LASTNAME.sh" and write code for each task. for example: 
+
+```
+# Task 1: how many genes are there in the GTF file? 
+ng=$(less gencode.v44.basic.annotation.gene_only.gtf | wc -l)
+echo "T1: There are ${ng} genes"
+```
+
+The main difference with the quiz is that now, you are writting a shell script instead of a plain text file. 
+Make sure the answers are provided with code and that the tasks promtps are commented i.e. # as shown in the example above.
+
 ## The GTF format
 
 Here, you will work with a GTF file: gencode.v44.basic.annotation.gene_only.gtf
@@ -40,23 +57,6 @@ The info field contains a lot of information about the genes such as gene type, 
 **IMPORTANT**
 
 This file is large, so you should not perform calculations on the login node. Use a computing or interactive node (qrsh). 
-
-## Instructions 
-
-First, download or transfer the GTF file to Hoffman2.
-
-Hint: You can download individual files from Github, but you can also download the entire repository if that's easier. 
-
-You will write a shell script with the name format "W1_assignment_FIRSTNAME_LASTNAME.sh" and write code for each task. for example: 
-
-```
-# Task 1: how many genes are there in the GTF file? 
-ng=$(less gencode.v44.basic.annotation.gene_only.gtf | wc -l)
-echo "T1: There are ${ng} genes"
-```
-
-The main difference with the quiz is that now, you are writting a shell script instead of a plain text file. 
-Make sure the answers are provided with code and that the tasks promtps are commented i.e. # as shown in the example above.
 
 ## Tasks 
 
