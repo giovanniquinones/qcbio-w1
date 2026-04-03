@@ -71,10 +71,14 @@ This file is large, so you should not perform calculations on the login node. Us
 
 You only need to copy your shell file  "W1_assignment_FIRSTNAME_LASTNAME.sh" to `/u/scratch/g/giovas`. Same way you submitted the Quiz. 
 
-I will submit each of your scripts to the cluster and check your answers in your log file: log_answers.FIRSTNAME_LASTNAME.txt
+I will submit each of your scripts to the cluster and check your answers in your log file: 
 
 ```
 qsub W1_assignment_FIRSTNAME_LASTNAME.sh
+
+# after job  completion
+
+less log_answers.FIRSTNAME_LASTNAME.txt
 ```
 You can run this command from your end to check your output and make sure all the commands run well.
 
