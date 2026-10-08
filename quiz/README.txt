@@ -1,10 +1,14 @@
-The RepeatMasker files are in BED format. e.g.: 
 
-=======================================================================
-chrom	start	end	Rep_Class	Rep_Family		Strand           
-chr1	290257	290667	LTR		ERVL-MaLR|MLT1F2	+
-chr1	4543400	4543549	LTR		ERVL-MaLR|MLT1B		+
-=======================================================================
+You are working with UCSC gene-prediction files.
+Each line contains the coordinates of a known transcript and the number of exons it contains.
+All the files have 6 columns and variable number of rows.
 
-The length of each repeat (each row) is the difference between end and start 
+The columns are: 
 
+transcript_name		chromosome	strand	transcript_start	transcript_end	exons	
+```
+ENST00000743704.1	chr21		-	5499157			5502492		3
+ENST00000743703.1	chr21		-	5499202			5502549		3
+ENST00000619252.5	chr21		+	5553601			5592005		3
+ENST00000775086.1	chr21		+	5553618			5592004		3
+```
